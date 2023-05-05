@@ -4,6 +4,7 @@ require_once __DIR__ . '/models/Product.php';
 require_once __DIR__ . '/models/Category.php';
 require_once __DIR__ . '/models/Type.php';
 require_once __DIR__ . '/models/Carne.php';
+require_once __DIR__ . '/models/Trasportino.php';
 include __DIR__ . '/database/db.php';
 include __DIR__ . '/partials/functions.php';
 
@@ -27,20 +28,25 @@ include __DIR__ . '/partials/functions.php';
         </div>
     </header>
 
-    <main class="container pt-5">
+    <main class="container py-5">
         <h2>Elenco prodotti</h2>
-        <div class="border border-black mt-3">
+        <div class="row border border-black mt-3 align-items-center">
             <?php
-                echo '<div class="card" style="width: 18rem;">
-                <img src="' . $manzo_lattina->img_url . '" class="card-img-top" alt="' . $manzo_lattina->name . '">
-                <div class="card-body">
-                  <h5 class="card-title">' . $manzo_lattina->name . '</h5>
-                  <h5>Prezzo: ' . $manzo_lattina->getPrice() . '</h5>
-                  <h6>Categoria: ' . returnIcon($manzo_lattina->category->name) . '</h6>
-                  <h6>Tipologia prodotto: ' . $manzo_lattina->type->name . '</h6>
-                  <a href="#" class="btn btn-primary">Aggiungi al carrello</a>
-                </div>
-              </div>'
+                foreach($product_list as $product){
+                    echo '  <div class="col-3 p-3">
+                                <div class="card h-100">
+                                    <img src="' . $product->img_url . '" class="card-img-top" alt="' . $product->name . '">
+                                    <div class="card-body">
+                                        <h5 class="card-title">' . $product->name . '</h5>
+                                        <h5>Prezzo: ' . $product->getPrice() . '</h5>
+                                        <h6>Categoria: ' . returnIcon($product->category->name) . '</h6>
+                                        <h6>Tipologia prodotto: ' . $product->type->name . '</h6>
+                                        <h6>Caratteristiche aggiuntive</h6>' . $product->getInformationsListHtml()  . '
+                                        <a href="#" class="btn btn-primary mt-3">Aggiungi al carrello</a>
+                                    </div>
+                                </div>
+                            </div>';
+                }
             ?>
         </div>
     </main>

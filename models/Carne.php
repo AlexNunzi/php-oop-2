@@ -12,4 +12,11 @@ class Carne extends Product{
         $this->taste = $_taste;
         $this->weigth_amount = $_weigth_amount;
     }
+
+    public function getInformationsListHtml(){
+        return  '<ul>
+                    <li>Sapore: ' . $this->taste . '</li>
+                    <li>Peso: ' . $this->weigth_amount .'g</li>
+                </ul>';
+    }
 }
