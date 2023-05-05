@@ -13,4 +13,8 @@ class Product {
         $this->category = $_category;
         $this->type = $_type;
     }
+
+    public function getPrice(){
+        return $this->price;
+    }
 }
