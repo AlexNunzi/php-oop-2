@@ -31,13 +31,13 @@ include __DIR__ . '/partials/functions.php';
 
     <main class="container py-5">
         <h2>Elenco prodotti</h2>
-        <div class="row border border-black mt-3 align-items-center">
+        <div class="row border border-black mt-3">
             <?php
                 foreach($product_list as $product){
                     echo '  <div class="col-3 p-3">
-                                <div class="card h-100">
+                                <div class="card h-100 p-3">
                                     <img src="' . $product->img_url . '" class="card-img-top" alt="' . $product->name . '">
-                                    <div class="card-body">
+                                    <div class="card-body d-flex flex-column justify-content-between">
                                         <h5 class="card-title">' . $product->name . '</h5>
                                         <h5>Prezzo: ' . $product->getPrice() . '€</h5>
                                         <h6>Categoria: ' . returnIcon($product->category->name) . '</h6>
