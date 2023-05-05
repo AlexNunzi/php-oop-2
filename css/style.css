@@ -1,0 +1,8 @@
+:root{
+    --primary-bg: #FFD500;
+}
+
+header{
+    height: 5rem;
+    background-color: var(--primary-bg);
+}
