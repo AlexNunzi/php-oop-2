@@ -20,4 +20,7 @@ $trasportino_caravan->img_url = "./img/trasportino_gatto.png";
 $trasportino_cane_lux = new Trasportino("Trasportino Cane Lux", 79.99, $cane, $accessorio, "48x32x31 cm", "Plastic");
 $trasportino_cane_lux->img_url = "./img/trasportino_cane_lux.png";
 
-$product_list = [$manzo_lattina, $pollo_lattina, $trasportino_caravan, $trasportino_cane_lux];
+$frontline_cane = new Protezione("Frontline TRI-ACT", 40.00, $cane, $medicinale, "Antiparassitario per cani");
+$frontline_cane->img_url = "./img/frontline_cane.png";
+
+$product_list = [$manzo_lattina, $pollo_lattina, $trasportino_caravan, $trasportino_cane_lux, $frontline_cane];

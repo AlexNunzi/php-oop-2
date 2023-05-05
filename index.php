@@ -5,6 +5,7 @@ require_once __DIR__ . '/models/Category.php';
 require_once __DIR__ . '/models/Type.php';
 require_once __DIR__ . '/models/Carne.php';
 require_once __DIR__ . '/models/Trasportino.php';
+require_once __DIR__ . '/models/Protezione.php';
 include __DIR__ . '/database/db.php';
 include __DIR__ . '/partials/functions.php';
 
@@ -38,7 +39,7 @@ include __DIR__ . '/partials/functions.php';
                                     <img src="' . $product->img_url . '" class="card-img-top" alt="' . $product->name . '">
                                     <div class="card-body">
                                         <h5 class="card-title">' . $product->name . '</h5>
-                                        <h5>Prezzo: ' . $product->getPrice() . '</h5>
+                                        <h5>Prezzo: ' . $product->getPrice() . '€</h5>
                                         <h6>Categoria: ' . returnIcon($product->category->name) . '</h6>
                                         <h6>Tipologia prodotto: ' . $product->type->name . '</h6>
                                         <h6>Caratteristiche aggiuntive</h6>' . $product->getInformationsListHtml()  . '
