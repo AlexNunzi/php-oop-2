@@ -4,8 +4,8 @@ trait Sizeable {
     protected $minPetKg;
     protected $maxPetKg;
 
-    public function setPetWeightRange(int $_minPetKg, int $_maxPetKg) {
-        if(is_nan($_minPetKg) || is_nan($_maxPetKg)){
+    public function setPetWeightRange($_minPetKg, $_maxPetKg) {
+        if(!is_int($_minPetKg) || !is_int($_maxPetKg)){
             throw new Exception('I valori inseriti devono essere entrambi numeri interi');
         } else if ($_maxPetKg < $_minPetKg) {
             throw new Exception('Il valore del secondo parametro passato non può essere inferiore al valore del primo');
